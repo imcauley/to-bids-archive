@@ -1,6 +1,14 @@
+import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+
+
 export default function Post({ post }) {
     return (<div>
-        {post.data}
+        <Paper elevation={3}>
+            {post.title}
+            <Divider />
+            {post.data}
+        </Paper>
     </div>)
 }
 
@@ -11,7 +19,8 @@ export async function getStaticProps({ params }) {
     // const res = await fetch(`https://.../posts/${params.id}`)
     // const post = await res.json()
     const post = {
-        data: "test"
+        title: "test",
+        data: "lots of text"
     }
 
     // Pass post data to the page via props
